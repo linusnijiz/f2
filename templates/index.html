@@ -5,6 +5,7 @@
 <title>lyrp.io – Deine Follower. Kostenlos. Jetzt.</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 body {
@@ -88,85 +89,46 @@ body {
 
 
 
-/* ---------------- HERO SECTION ---------------- */
+/* HERO MOBILE FIX */
+@media (max-width: 1000px) {
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+        gap: 50px;
+    }
 
-.hero-container {
-    max-width: 1300px;
-    margin: auto;
-    padding: 80px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    .right-card {
+        transform: none;
+        width: 100%;
+        max-width: 420px;
+        height: auto;
+        padding: 25px;
+    }
+
+    .left {
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .title {
+        font-size: 42px;
+        line-height: 1.15;
+    }
 }
 
-/* LEFT SIDE */
-.left {
-    max-width: 550px;
+@media (max-width: 600px) {
+    .title {
+        font-size: 32px;
+    }
+
+    .hints {
+        flex-direction: column;
+        gap: 8px;
+        align-items: center;
+    }
 }
 
-.live-pill {
-    display: inline-block;
-    background: #ede9ff;
-    padding: 6px 14px;
-    border-radius: 20px;
-    font-size: 13px;
-    color: #6b4eff;
-    font-weight: 600;
-    margin-bottom: 20px;
-}
-
-.title {
-    font-size: 62px;
-    font-weight: 900;
-    line-height: 1.05;
-}
-
-.title span {
-    background: linear-gradient(90deg, #9b6bff, #5ea8ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.subtitle {
-    margin-top: 20px;
-    font-size: 17px;
-    color: #444;
-}
-
-.input-field {
-    width: 100%;
-    padding: 16px;
-    margin-top: 30px;
-    border-radius: 14px;
-    border: 1px solid #ddd;
-    font-size: 16px;
-}
-
-.start-btn {
-    width: 100%;
-    background: linear-gradient(90deg, #7d51ff, #b56bff);
-    padding: 16px;
-    margin-top: 15px;
-    border-radius: 14px;
-    font-size: 18px;
-    color: white;
-    font-weight: 600;
-    cursor: pointer;
-    border: none;
-    transition: 0.2s;
-}
-
-.start-btn:hover {
-    opacity: 0.9;
-}
-
-.hints {
-    margin-top: 20px;
-    font-size: 14px;
-    color: #666;
-    display: flex;
-    gap: 20px;
-}
 
 /* ---------------- RIGHT CARD ---------------- */
 

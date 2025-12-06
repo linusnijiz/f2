@@ -2,21 +2,5 @@ services:
   - type: web
     name: lyrp-web
     env: python
-    region: frankfurt
-    plan: free
-    buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn app:app
-    envVars:
-      - key: FLASK_ENV
-        value: production
-
-  - type: worker
-    name: lyrp-discord-bot
-    env: python
-    region: frankfurt
-    plan: free
-    buildCommand: pip install -r requirements.txt
-    startCommand: python discord_bot.py
-    envVars:
-      - key: DISCORD_TOKEN
-        sync: false
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn app:app"

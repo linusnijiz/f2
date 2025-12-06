@@ -4,3 +4,4 @@ Werkzeug
 requests
 python-dotenv
 discord.py
+gunicorn

@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>lyrp.io – Deine Follower. Kostenlos. Jetzt.</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    background: #f7f8fc;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+/* ---------- NAVBAR ---------- */
+
+.nav {
+    width: 100%;
+    padding: 18px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: rgba(255,255,255,0.65);
+    backdrop-filter: blur(16px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    border-bottom: 1px solid rgba(230,230,255,0.4);
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.nav-logo {
+    width: 42px;
+    height: 42px;
+    background: linear-gradient(135deg, #7b4dff, #b88bff);
+    border-radius: 12px;
+}
+
+.nav-brand {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+.nav-right {
+    display: flex;
+    gap: 14px;
+}
+
+.nav-login {
+    padding: 10px 20px;
+    border-radius: 12px;
+    background: white;
+    border: 1px solid #dcdced;
+    color: #444;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.nav-login:hover {
+    background: #f3f3ff;
+}
+
+.nav-register {
+    padding: 10px 20px;
+    border-radius: 12px;
+    background: linear-gradient(90deg, #7a56ff, #b56bff);
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.2s;
+    box-shadow: 0 6px 15px rgba(125,81,255,0.25);
+}
+
+.nav-register:hover {
+    opacity: 0.9;
+}
+
+
+
+/* ---------------- HERO SECTION ---------------- */
+
+.hero-container {
+    max-width: 1300px;
+    margin: auto;
+    padding: 80px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* LEFT SIDE */
+.left {
+    max-width: 550px;
+}
+
+.live-pill {
+    display: inline-block;
+    background: #ede9ff;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    color: #6b4eff;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.title {
+    font-size: 62px;
+    font-weight: 900;
+    line-height: 1.05;
+}
+
+.title span {
+    background: linear-gradient(90deg, #9b6bff, #5ea8ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+    margin-top: 20px;
+    font-size: 17px;
+    color: #444;
+}
+
+.input-field {
+    width: 100%;
+    padding: 16px;
+    margin-top: 30px;
+    border-radius: 14px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+}
+
+.start-btn {
+    width: 100%;
+    background: linear-gradient(90deg, #7d51ff, #b56bff);
+    padding: 16px;
+    margin-top: 15px;
+    border-radius: 14px;
+    font-size: 18px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: 0.2s;
+}
+
+.start-btn:hover {
+    opacity: 0.9;
+}
+
+.hints {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #666;
+    display: flex;
+    gap: 20px;
+}
+
+/* ---------------- RIGHT CARD ---------------- */
+
+.right-card {
+    width: 520px;
+    height: 360px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(233,217,255,0.6));
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    border-radius: 30px;
+    padding: 30px;
+    position: relative;
+    transform: rotate(-3deg);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-title {
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.card-sub {
+    margin-top: 4px;
+    color: #777;
+    font-size: 13px;
+}
+
+.follow-tag {
+    padding: 6px 14px;
+    background: #e5fbe8;
+    color: #29b44a;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.card-footer {
+    position: absolute;
+    bottom: 20px;
+    right: 25px;
+    color: #8a64ff;
+    font-weight: 700;
+    font-size: 17px;
+}
+
+/* ---------- PLAN SECTION ---------- */
+
+.plans-wrapper {
+    margin-top: 120px;
+    text-align: center;
+}
+
+.plans-title {
+    font-size: 42px;
+    font-weight: 900;
+    margin-bottom: 60px;
+}
+
+.plans-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.plan-card {
+    width: 330px;
+    background: white;
+    padding: 40px;
+    border-radius: 34px;
+    text-align: left;
+
+    box-shadow: 0 12px 40px rgba(0,0,0,0.06);
+    position: relative;
+    transition: 0.25s;
+}
+
+.plan-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 55px rgba(0,0,0,0.12);
+}
+
+/* Booster Glow */
+.plan-card.booster {
+    border: 2px solid #dcd1ff;
+    box-shadow: 0 0 40px rgba(150,120,255,0.25);
+}
+
+.plan-icon {
+    font-size: 26px;
+    background: #f3e8ff;
+    color: #7d4dff;
+    width: 52px;
+    height: 52px;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.plan-badge {
+    position: absolute;
+    top: 22px;
+    right: 22px;
+    background: #ebe3ff;
+    color: #7d4dff;
+    padding: 6px 12px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.elite-badge {
+    background: #ffe9c7;
+    color: #b36d00;
+}
+
+.plan-name {
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.plan-price {
+    margin-top: 6px;
+    font-size: 32px;
+    font-weight: 900;
+}
+
+.plan-price span {
+    font-size: 15px;
+    color: #666;
+}
+
+.plan-tag {
+    display: inline-block;
+    background: #f4edff;
+    padding: 6px 14px;
+    margin-top: 12px;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+.plan-list {
+    margin-top: 20px;
+    list-style: none;
+    padding: 0;
+}
+
+.plan-list li {
+    margin: 10px 0;
+    font-size: 15px;
+    color: #444;
+}
+
+.plan-btn {
+    margin-top: 25px;
+    width: 100%;
+    padding: 14px;
+    border-radius: 14px;
+    border: none;
+    background: linear-gradient(90deg, #8858ff, #b56bff);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.25s;
+}
+
+.plan-btn:hover {
+    opacity: 0.9;
+}
+
+.plan-btn.inactive {
+    background: #f8f8f8;
+    border: 1px solid #ddd;
+    color: #777;
+    cursor: default;
+}
+
+.plan-btn.outline {
+    background: white;
+    border: 1px solid #ccc;
+    color: #333;
+}
+
+
+
+
+/* ---------- RESPONSIVE NAVBAR ---------- */
+@media (max-width: 768px) {
+    .nav {
+        padding: 14px 22px;
+    }
+
+    .nav-brand {
+        font-size: 18px;
+    }
+
+    .nav-logo {
+        width: 34px;
+        height: 34px;
+    }
+
+    .nav-right a {
+        padding: 8px 14px;
+        font-size: 14px;
+    }
+}
+/* ---------- RESPONSIVE HERO SECTION ---------- */
+@media (max-width: 1000px) {
+    .container {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    .left {
+        max-width: 100%;
+        width: 90%;
+    }
+    .right-card {
+        width: 80%;
+    }
+
+    .title {
+        font-size: 48px;
+    }
+    .hero-container {
+        gap: 60px;
+        flex-direction: column;
+    }   
+}
+
+@media (max-width: 600px) {
+    .title {
+        font-size: 36px;
+        line-height: 1.15;
+    }
+
+    .subtitle {
+        font-size: 15px;
+    }
+
+    .input-field {
+        font-size: 15px;
+        padding: 12px;
+    }
+
+    .start-btn {
+        padding: 14px;
+        font-size: 16px;
+    }
+}
+/* ---------- RESPONSIVE PLAN CARDS ---------- */
+
+@media (max-width: 1200px) {
+    .plans-grid {
+        gap: 20px;
+    }
+
+    .plan-card {
+        width: 70%;
+        padding: 30px;
+    }
+}
+
+@media (max-width: 980px) {
+    .plans-grid {
+        flex-wrap: wrap;
+        justify-content: center;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .plan-card {
+        margin-bottom: 20px;
+    }
+    
+}
+
+@media (max-width: 600px) {
+    .plans-title {
+        font-size: 34px;
+        margin-bottom: 40px;
+    }
+
+    .plan-card {
+        width: 90%;
+        padding: 26px;
+    }
+
+    .plan-price {
+        font-size: 28px;
+    }
+
+    .plan-name {
+        font-size: 20px;
+    }
+
+    .plan-btn {
+        padding: 12px;
+        font-size: 15px;
+    }
+}
+    /* ---------- GLOBAL RESPONSIVE FIX ---------- */
+@media (max-width: 600px) {
+    body {
+        padding: 0;
+    }
+
+    h2, h3 {
+        text-align: center;
+    }
+
+    .card, .action-box, .aff-box {
+        width: 100% !important;
+        margin: 0 auto 20px;
+    }
+}
+
+</style>
+
+<script>
+function startNow() {
+    const username = document.getElementById("username").value.trim();
+
+    if (username === "") {
+        alert("Bitte gib einen Benutzernamen ein.");
+        return;
+    }
+
+    window.location = "/register?username=" + encodeURIComponent(username);
+}
+</script>
+
+</head>
+<body>
+
+<div class="nav">
+    <div class="nav-left">
+        <div class="nav-logo"></div>
+        <span class="nav-brand">lyrp.io</span>
+    </div>
+
+    <div class="nav-right">
+        <a href="/login" class="nav-login">Login</a>
+        <a href="/register" class="nav-register">Registrieren</a>
+    </div>
+</div>
+
+
+<!-- HERO -->
+<div class="hero-container">
+
+    <div class="left">
+        <div class="live-pill">⚡ Live: Kostenlose Drops aktiv</div>
+
+        <div class="title">
+            DEINE <span>FOLLOWER.</span><br>
+            KOSTENLOS.<br>
+            JETZT.
+        </div>
+
+        <div class="subtitle">
+            Fordere dir alle 30 Minuten neue Follower an.<br>
+            Kein Passwort. Kein Scam. Einfach Fame.
+        </div>
+
+        <input id="username" class="input-field" placeholder="Benutzername">
+        <button class="start-btn" onclick="startNow()">⚡ Jetzt loslegen</button>
+
+        <div class="hints">
+            <span>🟢 100% Safe</span>
+            <span>⏱ Alle 30 Min</span>
+            <span>💜 Gratis</span>
+        </div>
+    </div>
+
+    <!-- RIGHT CARD -->
+    <div class="right-card">
+        <div class="card-header">
+            <div>
+                <div class="card-title">Dein Profil</div>
+                <div class="card-sub">Gerade eben</div>
+            </div>
+
+            <div class="follow-tag">+15 Follower</div>
+        </div>
+
+        <!-- Fake blurred content bars -->
+        <div style="margin-top:30px; height:18px; width:80%; background:#ffffff77; border-radius:8px;"></div>
+        <div style="margin-top:14px; height:18px; width:70%; background:#ffffff77; border-radius:8px;"></div>
+        <div style="margin-top:14px; height:18px; width:65%; background:#ffffff77; border-radius:8px;"></div>
+
+        <div class="card-footer">14:59</div>
+    </div>
+
+</div>
+
+<div class="plans-wrapper">
+
+    <h2 class="plans-title">Wähle Deinen Plan</h2>
+
+    <div class="plans-grid">
+
+        <!-- FREE -->
+        <div class="plan-card">
+            <div class="plan-icon free-icon">★</div>
+            <h3 class="plan-name">Free</h3>
+
+            <div class="plan-price">0€</div>
+
+            <div class="plan-tag">⚡ 100 / Tag</div>
+
+            <ul class="plan-list">
+                <li>✓ 100 Follower pro Tag</li>
+                <li>✓ 30 Minuten Cooldown</li>
+                <li>✓ Standard Support</li>
+                <li>✓ Jederzeit kündbar</li>
+            </ul>
+
+            <button class="plan-btn inactive">Aktueller Plan</button>
+        </div>
+
+        <!-- BOOSTER -->
+        <div class="plan-card booster">
+            <div class="plan-icon boost-icon">⚡</div>
+            <span class="plan-badge">Beliebt</span>
+
+            <h3 class="plan-name">Booster</h3>
+            <div class="plan-price">9.99€<span>/Monat</span></div>
+
+            <div class="plan-tag boost">⚡ 250 / Tag</div>
+
+            <ul class="plan-list">
+                <li>✓ 250 Follower pro Tag</li>
+                <li>✓ 15 Minuten Cooldown</li>
+                <li>✓ Priority Support</li>
+                <li>✓ Monatlich kündbar</li>
+            </ul>
+
+            <button class="plan-btn active">Jetzt Upgraden</button>
+        </div>
+
+        <!-- ELITE -->
+        <div class="plan-card">
+            <div class="plan-icon elite-icon">👑</div>
+            <span class="plan-badge elite-badge">Premium</span>
+
+            <h3 class="plan-name">Elite</h3>
+            <div class="plan-price">29.99€<span>/Monat</span></div>
+
+            <div class="plan-tag elite">⚡ 1.000 / Tag</div>
+
+            <ul class="plan-list">
+                <li>✓ 1.000 Follower pro Tag</li>
+                <li>✓ 5 Minuten Cooldown</li>
+                <li>✓ VIP Support</li>
+                <li>✓ Monatlich kündbar</li>
+            </ul>
+
+            <button class="plan-btn outline">Jetzt Upgraden</button>
+        </div>
+
+    </div>
+</div>
+
+
+</body>
+</html>

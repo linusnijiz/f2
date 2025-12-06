@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Dashboard</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* ---------------- GLOBAL LAYOUT ---------------- */
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: #f6f7fb;
+    color: #111;
+}
+
+/* ---------------- NAVBAR ---------------- */
+
+.navbar {
+    background: #ffffff;
+    padding: 18px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo {
+    width: 42px;
+    height: 42px;
+    background: linear-gradient(135deg, #6f8bff, #b29dff);
+    border-radius: 50%;
+}
+
+.brand {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.badge {
+    background: #ede9ff;
+    padding: 5px 14px;
+    border-radius: 10px;
+    font-size: 13px;
+    color: #694eff;
+}
+
+.logout-btn {
+    padding: 10px 22px;
+    border-radius: 10px;
+    background: white;
+    color: #444;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.logout-btn:hover {
+    background: #f1f1f1;
+}
+
+/* ---------------- PAGE WIDTH ---------------- */
+
+.page {
+    max-width: 1400px;
+    margin: auto;
+    padding: 40px;
+}
+
+/* ---------------- TOP GRID ---------------- */
+
+.top-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 26px;
+}
+
+.card {
+    background: white;
+    border-radius: 22px;
+    padding: 30px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+}
+
+.card-title {
+    font-size: 13px;
+    font-weight: 500;
+    color: #6b6b6b;
+    margin-bottom: 6px;
+}
+
+.card-value {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+/* ---------------- MAIN GRID ---------------- */
+
+.main-grid {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 2fr 1.2fr;
+    gap: 32px;
+}
+
+/* ---------------- ACTION BOX ---------------- */
+
+.action-box {
+    background: white;
+    border-radius: 22px;
+    padding: 40px;
+    box-shadow: 0 8px 28px rgba(0,0,0,0.06);
+}
+
+.start-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #ecfffc;
+    padding: 6px 12px;
+    border-radius: 30px;
+    color: #009f87;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.start-pill .dot {
+    width: 10px;
+    height: 10px;
+    background: #00e6c1;
+    border-radius: 50%;
+}
+
+.action-box h2 {
+    font-size: 26px;
+    font-weight: 700;
+    margin-top: 25px;
+}
+
+.action-btn {
+    margin-top: 40px;
+    background: #4a6fff;
+    padding: 15px 24px;
+    color: white;
+    font-size: 15px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.action-btn:hover {
+    background: #3c58d9;
+}
+
+/* ---------------- AFFILIATE BOX ---------------- */
+
+.aff-box {
+    background: white;
+    border-radius: 22px;
+    padding: 40px;
+    box-shadow: 0 8px 28px rgba(0,0,0,0.06);
+}
+
+.aff-box h3 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.copy-area {
+    background: #f3f4f8;
+    padding: 10px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.copy-area input {
+    border: none;
+    background: none;
+    flex: 1;
+    padding: 8px;
+    font-size: 15px;
+}
+
+.copy-btn {
+    background: #101828;
+    padding: 10px 18px;
+    border-radius: 10px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.money {
+    font-size: 22px;
+    font-weight: 700;
+    margin: 5px 0 20px;
+}
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.user-info {
+    text-align: right;
+    line-height: 1.2;
+}
+
+.user-name {
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.user-email {
+    font-size: 12px;
+    color: #777;
+}
+
+.avatar {
+    width: 42px;
+    height: 42px;
+    background: linear-gradient(135deg, #7b8dff, #b39bff);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+
+/* ---------------- RESPONSIVE ---------------- */
+
+@media (max-width: 1000px) {
+    .main-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+</style>
+
+</head>
+<body>
+
+<!-- ---------------- NAV ---------------- -->
+<div class="navbar">
+
+    <!-- LEFT SIDE -->
+    <div class="nav-left">
+        <div class="logo"></div>
+        <div class="brand">lyrp.io</div>
+        <div class="badge">Dashboard</div>
+    </div>
+
+    <!-- RIGHT SIDE: USER INFO + LOGOUT -->
+    <div class="nav-right">
+
+        <div class="user-info">
+            <div class="user-name">{{ user.username }}</div>
+            <div class="user-email">{{ user.email }}</div>
+        </div>
+
+        <div class="avatar">
+            {{ user.username[0] | upper }}
+        </div>
+
+        <button class="logout-btn" onclick="window.location='/logout'">Logout</button>
+    </div>
+
+</div>
+
+<!-- ---------------- CONTENT ---------------- -->
+<div class="page">
+
+    <!-- TOP CARDS -->
+    <div class="top-grid">
+        <div class="card">
+            <div class="card-title">AKTUELLER PLAN</div>
+            <div class="card-value">{{ user.plan }}</div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">AKTIONEN GESAMT</div>
+            <div class="card-value">{{ user.followers_sent }}</div>
+
+        </div>
+
+        <div class="card">
+            <div class="card-title">TAGESLIMIT</div>
+            <div class="card-value">{{ plan_data['quantity'] }}</div>
+            <div style="font-size:14px; margin-top:4px; color:#666;">
+                Cooldown: {{ plan_data['cooldown'] // 60 }} Minuten
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="main-grid">
+
+        <!-- LEFT ACTION BOX -->
+        <div class="action-box">
+            <div class="start-pill">
+                <span class="dot"></span> Aktion starten
+            </div>
+
+            <h2>Schnell eine Demo-Aktion ausführen</h2>
+            <p>Jede Aktion erhöht deinen Zähler. Hier wird nur die Backend-Logik getestet.</p>
+
+            <button class="action-btn" onclick="sendOrder()">Aktion ausführen</button>
+            <p id="cooldown-display"></p>
+
+            <div id="response"></div>
+        </div>
+
+        <!-- RIGHT AFFILIATE BOX -->
+        <div class="aff-box">
+            <h3>Affiliate-Einnahmen</h3>
+            <p>Teile deinen Code und erhalte 20 % Anteil an Umsätzen deiner eingeladenen Nutzer.</p>
+
+            <label>Dein Code</label>
+            <div class="copy-area">
+                <input id="refcode" value="{{ user.referral_code }}" readonly>
+                <button class="copy-btn" onclick="copyRef()">Kopieren</button>
+            </div>
+
+            <p>Verfügbare Einnahmen</p>
+            <div class="money">{{ "%.2f"|format(user.balance) }}€</div>
+
+            <p>Von dir eingeladene Konten</p>
+            <div class="money">{{ referred_users|length }}</div>
+
+            
+        </div>
+
+    </div>
+</div>
+
+<script>
+function copyRef() {
+    navigator.clipboard.writeText(document.getElementById("refcode").value);
+    alert("Code kopiert!");
+}
+
+</script>
+<script>
+function sendOrder() {
+    const link = "{{ user.username }}"; // automatisch
+
+    fetch("/send_order", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ link: link })
+    })
+    .then(async res => {
+        const raw = await res.text();
+        let data;
+
+        try {
+            data = JSON.parse(raw);
+        } catch (err) {
+            console.error("❌ SERVER returned non-JSON:", raw);
+            document.getElementById("cooldown-display").innerHTML =
+                "<span style='color:red;'>❌ Serverfehler – siehe Console</span>";
+            return;
+        }
+
+        // Falls Backend einen Fehler meldet
+        if (!res.ok || data.error) {
+            document.getElementById("cooldown-display").innerHTML =
+                "<span style='color:red;'>❌ " + (data.error || "Fehler") + "</span>";
+            return;
+        }
+
+        // --- Erfolg! ---
+        document.getElementById("cooldown-display").innerHTML =
+            "<span style='color:green;'>✔ Auftrag erfolgreich ausgeführt!</span>";
+
+        // Timer zurücksetzen
+        remaining = cooldownTotal;
+        updateCooldown();
+    })
+    .catch(err => {
+        console.error("❌ FETCH FAILED:", err);
+        document.getElementById("cooldown-display").innerHTML =
+            "<span style='color:red;'>❌ Netzwerkfehler beim Senden</span>";
+    });
+}
+</script>
+
+
+
+
+
+</body>
+</html>
